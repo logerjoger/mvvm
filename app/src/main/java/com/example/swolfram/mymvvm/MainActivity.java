@@ -7,10 +7,14 @@ import android.os.Bundle;
 import com.example.swolfram.mymvvm.databinding.ActivityMainBinding;
 
 /**
+ *
+ *
  * MainActivity setContentView for databinding and set model (User and Handler) in binding.
  * Then you have access to this model in view and in all view callbacks.
  *
  * Con: View (activity, fragment, etc.) must set all models.
+ *
+ * @see <a href="https://developer.android.com/topic/libraries/data-binding/index.html</a>
  */
 public class MainActivity extends AppCompatActivity {
 
