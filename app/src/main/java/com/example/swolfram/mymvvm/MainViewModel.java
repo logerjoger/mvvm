@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class MainViewModel {
 
+    public boolean isAdult = true;
+
     public MainViewModel(String text) {
         this.text = text;
     }
