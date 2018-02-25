@@ -10,6 +10,6 @@ import android.widget.TextView;
 
 public class Presenter {
     public void onClickView(View view, MainViewModel viewModel) {
-        ((TextView)view).setText("Hallo!");
+        viewModel.setText("neuer Text");
     }
 }
