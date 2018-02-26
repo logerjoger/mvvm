@@ -2,6 +2,7 @@ package com.example.swolfram.mymvvm;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.databinding.ObservableField;
 import android.view.View;
 import android.widget.TextView;
 
@@ -9,23 +10,22 @@ import android.widget.TextView;
  * Created by s.wolfram on 21.02.18.
  */
 
-public class MainViewModel extends BaseObservable{
+public class MainViewModel {
 
-    public String text;
+    public ObservableField<String> text = new ObservableField<>();
 
     public boolean isAdult = true;
 
     MainViewModel(String text) {
-        this.text = text;
+        this.text.set(text);
     }
 
-    @Bindable
-    public String getText() {
+    public ObservableField<String> getText() {
         return text;
     }
 
     public void setText(String text) {
-        this.text = text;
-        notifyPropertyChanged(BR.text);
+        this.text.set(text);
     }
+
 }
