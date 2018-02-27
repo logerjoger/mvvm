@@ -37,5 +37,13 @@
         android:layout_height="wrap_content"
         android:text="@={user.text}"/>
 
+    <ImageView
+        android:paddingLeft="@{100}"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        app:imageUrl="@{user.text}"
+        android:background="@color/colorPrimary"
+        app:error="@{@drawable/ic_launcher_background}"/>
+
 </LinearLayout>
 </layout>
