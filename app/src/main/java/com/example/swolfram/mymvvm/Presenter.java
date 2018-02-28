@@ -1,7 +1,10 @@
 package com.example.swolfram.mymvvm;
 
+import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -11,5 +14,20 @@ import android.widget.TextView;
 public class Presenter {
     public void onClickView(View view, MainViewModel viewModel) {
         viewModel.setText("neuer Text");
+    }
+
+    @BindingAdapter("android:paddingLeft")
+    public static void setPaddingLeft(View view, int oldPadding, int newPadding) {
+        if (oldPadding != newPadding) {
+            view.setPadding(newPadding,
+                    view.getPaddingTop(),
+                    view.getPaddingRight(),
+                    view.getPaddingBottom());
+        }
+    }
+
+    @BindingAdapter({"bind:imageUrl", "bind:error"})
+    public static void loadImage(ImageView view, String url, Drawable error) {
+     //   Picasso.with(view.getContext()).load(url).error(error).into(view);
     }
 }

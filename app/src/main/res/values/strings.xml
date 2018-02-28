@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My MVVM</string>
+    <string name="input_text">type something in...</string>
+    <string name="image_description">sampel_image</string>
 </resources>
