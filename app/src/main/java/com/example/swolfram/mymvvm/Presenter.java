@@ -28,7 +28,6 @@ public class Presenter {
 
     @BindingAdapter({"bind:imageUrl", "bind:error"})
     public static void loadImage(ImageView view, String url, Drawable error) {
-        // FIXME: 27.02.18 will called every input on editText!
      //   Picasso.with(view.getContext()).load(url).error(error).into(view);
     }
 }

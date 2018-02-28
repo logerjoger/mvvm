@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class MainViewModel {
 
     public ObservableField<String> text = new ObservableField<>();
+    public String url = "http://www.google.de";
 
     public boolean isAdult = true;
 

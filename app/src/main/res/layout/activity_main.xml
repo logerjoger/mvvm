@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <import type="android.view.View"/>
@@ -33,6 +34,8 @@
         android:onClick="@{(theView) -> handler.onClickView(theView, user)}"/>
 
     <EditText
+        android:hint="@string/input_text"
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@={user.text}"/>
@@ -41,9 +44,11 @@
         android:paddingLeft="@{100}"
         android:layout_height="100dp"
         android:layout_width="100dp"
-        app:imageUrl="@{user.text}"
+        app:imageUrl="@{user.url}"
         android:background="@color/colorPrimary"
-        app:error="@{@drawable/ic_launcher_background}"/>
+        app:error="@{@drawable/ic_launcher_background}"
+        android:contentDescription="@string/image_description"
+        tools:ignore="RtlHardcoded,RtlSymmetry"/>
 
 </LinearLayout>
 </layout>
