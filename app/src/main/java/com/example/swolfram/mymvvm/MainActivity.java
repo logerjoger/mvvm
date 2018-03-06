@@ -1,6 +1,7 @@
 package com.example.swolfram.mymvvm;
 
 import android.databinding.DataBindingUtil;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -24,11 +25,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-//        ActivityMainBinding activityMainBinding1 = ActivityMainBinding.inflate(getLayoutInflater());
         // TODO: 22.02.18 How use databing with dagger?
         activityMainBinding.setUser(new MainViewModel("Hallo du!"));
         activityMainBinding.setHandler(new Presenter());
-//        activityMainBinding.setVariable(BR)
+
+        startFragment();
+    }
+
+    public void startFragment(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager
+                .beginTransaction()
+                .add(R.id.rootLayout, new FragmentA(), FragmentA.class.getSimpleName())
+                .commit();
     }
 
 }
