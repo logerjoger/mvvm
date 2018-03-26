@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         getLifecycle().addObserver(handler);
 
         startFragment();
+        // TODO: 26.03.18 test todo
     }
 
     public void startFragment(){
