@@ -1,10 +1,14 @@
 package com.example.swolfram.mymvvm;
 
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.LifecycleObserver;
+import android.arch.lifecycle.OnLifecycleEvent;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.databinding.ObservableField;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by s.wolfram on 21.02.18.
@@ -28,5 +32,4 @@ public class MainViewModel {
     public void setText(String text) {
         this.text.set(text);
     }
-
 }

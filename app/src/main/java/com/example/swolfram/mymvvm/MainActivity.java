@@ -19,6 +19,9 @@ import com.example.swolfram.mymvvm.databinding.ActivityMainBinding;
  */
 public class MainActivity extends AppCompatActivity {
 
+    MainViewModel mainViewModel = new MainViewModel("Hallo du!");
+    Presenter handler = new Presenter();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         // TODO: 22.02.18 How use databing with dagger?
-        activityMainBinding.setUser(new MainViewModel("Hallo du!"));
-        activityMainBinding.setHandler(new Presenter());
+
+        activityMainBinding.setUser(mainViewModel);
+        activityMainBinding.setHandler(handler);
+        getLifecycle().addObserver(handler);
 
         startFragment();
     }
